@@ -31,6 +31,8 @@
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
 \newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
 \newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
 \addbibresource{~/.local/ref.bib}
 \begin{document}
 
@@ -57,8 +59,7 @@ First lets plot these models.
       Original Model & New Model
     \end{tabular}
   \end{center}
-  \caption{PCA model as a Bayesian network and a directed factor
-    graph.}
+  \caption{Our original model on the left and the new model on the right, where the direction between variables $x$ and $y$ is reversed.}
 \end{figure}
 
 
@@ -135,7 +136,7 @@ p(y | w, x)_{\text{graph one}} &= \frac{\sum_{z}p(z | x) p(w) p(x | w) p(y | x)}
 \\
 &= p(y | x)
 \end{align*}
-Therefore \(y \perp w | x\).
+Therefore \(y \independent w | x\).
 
 
 When moving to our new graph,
