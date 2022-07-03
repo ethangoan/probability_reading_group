@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+
+  % Define nodes
+  \node[latent]                               (w) {$w$};
+  \node[latent, below=of w] (x) {$x$};
+  \node[latent, below=of x] (y) {$y$};
+  \node[latent, left=2cm of x]            (z) {$z$};
+
+  % Connect the nodes
+  \edge {w} {x} ; %
+  \edge {x} {y,z} ; %
+\end{tikzpicture}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
